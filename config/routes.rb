@@ -1,4 +1,16 @@
 EssayBackend::Application.routes.draw do
+  get "reply/create"
+
+  get "reply/update"
+
+  get "reply/delete"
+
+  get "essay/index"
+
+  get "essay/create"
+
+  get "essay/delete"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
