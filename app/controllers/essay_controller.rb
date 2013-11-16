@@ -1,6 +1,8 @@
 class EssayController < ApplicationController
+
 	def index
 		@essays = Essay.all
+		callback = params[:callback]
 	end
 
 	def view
@@ -11,10 +13,10 @@ class EssayController < ApplicationController
 
 		title = params[:title]
 		content = params[:content]
-		
 
 		if ( title.nil? || content.nil? )
-
+			render json: { "error" => "Wrong parameters" }, :status => :bad_request
+		end
 
 	end
 

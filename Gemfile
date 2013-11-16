@@ -7,3 +7,5 @@ gem 'mysql2'
 gem 'jbuilder'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'jpbuilder'

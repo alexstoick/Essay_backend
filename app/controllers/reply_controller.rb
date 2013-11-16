@@ -1,10 +1,14 @@
 class ReplyController < ApplicationController
-  def create
-  end
+	def create
+		essay_id = params[:id]
 
-  def update
-  end
+		title = params[:title]
+		content = params[:content]
+	end
 
-  def delete
-  end
+	def update
+	end
+
+	def delete
+	end
 end

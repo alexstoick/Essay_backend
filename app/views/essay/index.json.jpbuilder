@@ -1,0 +1,9 @@
+json.array! @essays do |essay|
+
+	json.id essay.id
+	json.title essay.title
+	json.description essay.description
+	json.tag essay.tag do |tag|
+		json.type tag.name
+	end
+end
