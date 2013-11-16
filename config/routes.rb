@@ -5,8 +5,12 @@ EssayBackend::Application.routes.draw do
 	match "essay/" , :to => "essay#create" , :via => :post
 
 	match "essay/:id", :to => "essay#view", :via => :get
-	match "essay/:id/reply" , :to => "reply#create" , :via => :post
+	match "essay/:id", :to => "essay#update" , :via => :put
+	match "essay/:id", :to => "essay#delete" , :via => :delete
 
+	match "essay/:id/reply" , :to => "reply#create" , :via => :post
+	match "essay/:id/:reply_id", :to => "reply#update", :via => :put
+	match "essay/:id/:reply_id" , :to => "reply#delete", :via => :delete
 
 
 	match "user/" , :to => "user#create" , :via => :post

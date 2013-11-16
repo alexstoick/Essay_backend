@@ -3,7 +3,7 @@ class ReplyController < ApplicationController
 
 		essay_id = params[:id]
 		title = params[:title]
-		content = params[:content]
+		content = params[:description]
 		parent_id = params[:parent_id]
 
 		reply = Reply.new
