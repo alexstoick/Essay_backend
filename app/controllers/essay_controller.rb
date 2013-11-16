@@ -27,6 +27,27 @@ class EssayController < ApplicationController
 
 	end
 
+	def update
+		title = params[:title]
+		description = params[:description]
+		id = params[:id]
+
+		essay = Essay.find(id)
+
+		if ( ! title.nil? )
+			essay.title = title
+		end
+
+		if ( ! description.nil? )
+			essay.description = description
+		end
+		render json: { "success" => essay.save , "id" => essay.id }
+	end
+
 	def delete
+
+		id = params[:id]
+
+		render json: { "success" => ( Essay.delete(id) == 1 ) }
 	end
 end
