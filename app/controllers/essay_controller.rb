@@ -12,11 +12,18 @@ class EssayController < ApplicationController
 	def create
 
 		title = params[:title]
-		content = params[:content]
+		description = params[:description]
 
-		if ( title.nil? || content.nil? )
+		if ( title.nil? || description.nil? )
 			render json: { "error" => "Wrong parameters" }, :status => :bad_request
 		end
+
+		essay = Essay.new
+		essay.title = title
+		essay.description = description
+		essay.user_id = 0
+
+		render json: { "success" => essay.save , "id" => essay.id }
 
 	end
 
